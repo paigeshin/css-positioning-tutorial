@@ -1,0 +1,113 @@
+.service h2, .service p {
+    color: #999;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.service {
+    float: left;
+    background: #eee;
+    width: 29%;
+    margin: 1%;
+    padding: 1%;
+    height: 140px;
+    position:relative;
+}
+
+.service:nth-child(1){
+    top: 5px;
+}
+
+.service:nth-child(2){
+    top: 15px;
+}
+
+.service:nth-child(3){
+    top: 25px;
+}
+
+/* another way to clear 이렇게 해야지 float을 적용한 element 밑에 있는 것이 독립적으로 활동할 수 있다. */
+
+.services {
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.services:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 위의 service class의 float이 아래에 정의된 것에 영향을 줌. 그것을 없애기 위해서 사용하는 것이 clear */
+.content {
+    padding: 10px;
+    clear: left;
+    /* left, right, both  */
+    margin-top: 50px;
+    position: relative;
+}
+
+/* 6강에서 추가된 코드 */
+.content p {
+    -webkit-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+    -webkit-column-rule: 1px solid #ccc;
+    column-rule: 1px solid #ccc;
+    text-align: justify;
+}
+
+section, aside {
+    float: left;
+    width: 46%;
+    padding: 1%;
+    margin: 1%;
+    background: #f2f2f2;
+}
+
+.columns:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#banner {
+    max-height: 300px;
+    over-flow: hidden;
+    margin: 1%;
+    position: relative;
+}
+
+#banner h2{
+    position: absolute;
+    top: 30px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+nav {
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* ul자체에 float이 있는가보다. */
+nav ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav li{
+    list-style-type: none;
+    margin: 0 10px;
+    color: #fff;
+    float: right;
+}
